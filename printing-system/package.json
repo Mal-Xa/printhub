@@ -1,0 +1,27 @@
+{
+  "name": "printing-system",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Distributed printing system monorepo: print-common, print-server, print-agent, print-client.",
+  "workspaces": [
+    "print-common",
+    "print-server",
+    "print-agent",
+    "print-client"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=print-common && npm run build --workspace=print-server && npm run build --workspace=print-agent && npm run build --workspace=print-client",
+    "build:common": "npm run build --workspace=print-common",
+    "build:server": "npm run build --workspace=print-server",
+    "build:agent": "npm run build --workspace=print-agent",
+    "build:client": "npm run build --workspace=print-client",
+    "typecheck": "npm run typecheck --workspace=print-common && npm run typecheck --workspace=print-server && npm run typecheck --workspace=print-agent",
+    "dev:server": "npm run dev --workspace=print-server",
+    "dev:agent": "npm run dev --workspace=print-agent",
+    "dev:client": "npm run dev --workspace=print-client",
+    "clean": "npm run clean --workspace=print-common && npm run clean --workspace=print-server && npm run clean --workspace=print-agent"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

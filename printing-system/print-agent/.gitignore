@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+*.log
+
+# agent-local runtime state, if a state dir ends up inside the repo during local dev
+/.print-agent-state/

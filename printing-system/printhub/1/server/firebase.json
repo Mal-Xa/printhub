@@ -1,0 +1,24 @@
+{
+  "firestore": {
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": [
+    {
+      "source": ".",
+      "codebase": "sora-print-hub",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "*.local",
+        ".env",
+        "sora-s-print-firebase-adminsdk-fbsvc-70d7f40017.json",
+        "src",
+        "lib/**/*.map"
+      ],
+      "predeploy": [
+        "npm --prefix . run build"
+      ]
+    }
+  ]
+}

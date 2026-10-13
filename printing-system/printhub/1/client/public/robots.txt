@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sorasprint.joelvanlalmalsawma.workers.dev/sitemap.xml

@@ -1,0 +1,89 @@
+{
+  "name": "print-common",
+  "version": "1.0.0",
+  "description": "Source-of-truth shared TypeScript definitions (types, enums, constants, zod schemas) for the distributed printing system. Consumed by print-server, print-agent, and print-client. Contains no business logic.",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/cjs/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./enums": {
+      "types": "./dist/cjs/enums/index.d.ts",
+      "import": "./dist/esm/enums/index.js",
+      "require": "./dist/cjs/enums/index.js"
+    },
+    "./interfaces": {
+      "types": "./dist/cjs/interfaces/index.d.ts",
+      "import": "./dist/esm/interfaces/index.js",
+      "require": "./dist/cjs/interfaces/index.js"
+    },
+    "./api": {
+      "types": "./dist/cjs/api/index.d.ts",
+      "import": "./dist/esm/api/index.js",
+      "require": "./dist/cjs/api/index.js"
+    },
+    "./websocket": {
+      "types": "./dist/cjs/websocket/index.d.ts",
+      "import": "./dist/esm/websocket/index.js",
+      "require": "./dist/cjs/websocket/index.js"
+    },
+    "./validation": {
+      "types": "./dist/cjs/validation/index.d.ts",
+      "import": "./dist/esm/validation/index.js",
+      "require": "./dist/cjs/validation/index.js"
+    },
+    "./errors": {
+      "types": "./dist/cjs/errors/index.d.ts",
+      "import": "./dist/esm/errors/index.js",
+      "require": "./dist/cjs/errors/index.js"
+    },
+    "./constants": {
+      "types": "./dist/cjs/constants/index.d.ts",
+      "import": "./dist/esm/constants/index.js",
+      "require": "./dist/cjs/constants/index.js"
+    },
+    "./utils": {
+      "types": "./dist/cjs/utils/index.d.ts",
+      "import": "./dist/esm/utils/index.js",
+      "require": "./dist/cjs/utils/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "rimraf": "^5.0.7",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "eslint": "^8.57.0"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.9"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  }
+}
